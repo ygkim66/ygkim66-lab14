@@ -24,8 +24,6 @@ public class Server {
     }
     public void serve(int n){
         try{
-
-
             for (int i = 0; i < n; i++){
                 ldt.add(LocalDateTime.now());
                 clientSock = s.accept();
@@ -37,7 +35,9 @@ public class Server {
               
                 if (!in.readLine().equals("12345\n"))
                     throw new Exception();
-                System.out.println(clientSock.getOutputStream());
+
+                    
+               // System.out.println(clientSock.getOutputStream());
                // pw.println("Hello World");
                 
                 

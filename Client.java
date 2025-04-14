@@ -59,8 +59,8 @@ public class Client extends Socket {
             out.flush();
         }
         catch (Exception e){
-            System.out.println("yikes?");
-            out.write("couldn't handshake");
+          //  System.out.println("yikes?");
+        //    out.write("couldn't handshake");
         }
 
     }
