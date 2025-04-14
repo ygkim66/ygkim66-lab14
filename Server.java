@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Server {
-    ServerSocket s;
-    PrintWriter pw;
-    Socket clientSock;
-    ArrayList<LocalDateTime> ldt;
+    private ServerSocket s;
+    private PrintWriter pw;
+    private Socket clientSock;
+    private ArrayList<LocalDateTime> ldt;
     public Server(int port){
         try{
             s = new ServerSocket(port);
@@ -28,33 +28,15 @@ public class Server {
                 ldt.add(LocalDateTime.now());
                 clientSock = s.accept();
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSock.getInputStream()));
-                System.out.println(clientSock);
-           //     System.out.println("Connection from: "+clientSock.getRemoteSocketAddress());
-                
                 pw = new PrintWriter(clientSock.getOutputStream());
               
                 if (!in.readLine().equals("12345\n"))
                     throw new Exception();
-
-                    
-               // System.out.println(clientSock.getOutputStream());
-               // pw.println("Hello World");
-                
-                
-
-                //loop and get the new connection
-
             }
         }
         catch(Exception e){
             pw.write("couldn't handshake");
-            
-            //clientSock.
-           // clientSock.write("couldn't handshake");
-
-            //System.err.print("IOException");
-           // System.exit(1);
-           disconnect();
+            disconnect();
         }
            
     }

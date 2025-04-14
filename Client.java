@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Client extends Socket {
-    Socket s;
-    PrintWriter out=null;
-    BufferedReader in=null;
+    private Socket s;
+    private PrintWriter out;
+    private BufferedReader in;
 
     public Client(String host, int port ){
         try{
@@ -59,8 +59,7 @@ public class Client extends Socket {
             out.flush();
         }
         catch (Exception e){
-          //  System.out.println("yikes?");
-        //    out.write("couldn't handshake");
+
         }
 
     }
