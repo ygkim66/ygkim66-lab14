@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Client extends Socket {
     Socket s;
@@ -39,7 +41,8 @@ public class Client extends Socket {
         }
         
     }
-    
+
+
     public void disconnect(){
         try{
             //close the connections
@@ -55,7 +58,10 @@ public class Client extends Socket {
             out.write("12345\n");
             out.flush();
         }
-        catch (Exception e){}
+        catch (Exception e){
+            System.out.println("yikes?");
+            out.write("couldn't handshake");
+        }
 
     }
     public String toString(){

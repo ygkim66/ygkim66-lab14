@@ -183,7 +183,7 @@ public class Lab14_Tester {
     assertEquals("There was an exception on the server", line);
   }
 
-  /*@Test
+  @Test
   public void test6() {
     System.out.println("checking two client communication with server for medium number");
 
@@ -305,12 +305,16 @@ public class Lab14_Tester {
         System.out.println("handshake sent");
         Thread.sleep(1000); // give it a second to actually flush
 
+        System.out.println("here");
+
         server.serve(1);
         Thread.sleep(1000); // give it a second to actually flush
+      //  System.out.println("here");
 
         line = in.readLine();
         in.close();
         client.close();
+        //System.out.println("here");
     } catch (Exception e){
         e.printStackTrace();
     }
@@ -323,5 +327,5 @@ public class Lab14_Tester {
 
     assertEquals("couldn't handshake", line);
 
-  }*/
+  }
 }
